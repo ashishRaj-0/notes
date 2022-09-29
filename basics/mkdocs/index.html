@@ -869,29 +869,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#important-things-to-learn" class="md-nav__link">
-    Important things to learn:
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#material" class="md-nav__link">
-    Material
-  </a>
-  
-    <nav class="md-nav" aria-label="Material">
+    <nav class="md-nav" aria-label="Getting Started">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#a-video-on-material-for-mkdocs" class="md-nav__link">
-    A video on Material for mkdocs
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs-installation" class="md-nav__link">
+    MkDocs installation
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mkdocs-workflow" class="md-nav__link">
+    MkDocs' workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to" class="md-nav__link">
+    How to
+  </a>
   
 </li>
       
@@ -1034,29 +1048,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#important-things-to-learn" class="md-nav__link">
-    Important things to learn:
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#material" class="md-nav__link">
-    Material
-  </a>
-  
-    <nav class="md-nav" aria-label="Material">
+    <nav class="md-nav" aria-label="Getting Started">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#a-video-on-material-for-mkdocs" class="md-nav__link">
-    A video on Material for mkdocs
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs-installation" class="md-nav__link">
+    MkDocs installation
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mkdocs-workflow" class="md-nav__link">
+    MkDocs' workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to" class="md-nav__link">
+    How to
+  </a>
   
 </li>
       
@@ -1075,36 +1103,69 @@
                   
 
 
-<h1 id="mkdocs">MkDocs:</h1>
+<h1 id="mkdocs">MkDocs</h1>
 <ul>
 <li>MkDocs is a fast, simple and downright gorgeous static site generator that's geared towards building project documentation. </li>
 <li>Documentation source files are written in Markdown, and configured with a single YAML configuration file.</li>
 </ul>
-<p><strong>Go through the following links to get started</strong></p>
-<ol>
-<li><a href="https://www.mkdocs.org/getting-started/">Getting Started</a></li>
-<li><a href="https://www.mkdocs.org/user-guide/">User Guide</a></li>
-</ol>
-<h3 id="important-things-to-learn">Important things to learn:</h3>
+<h3 id="getting-started">Getting Started</h3>
+<h4 id="requirements">Requirements</h4>
 <ul>
-<li>Basic structure of MkDocs.</li>
-<li>About the docs folder</li>
-<li>mkdocs.yaml file</li>
-<li>site name &amp; url, repo url &amp; name</li>
-<li>nav - used to create the navigation for the documentation.</li>
-<li>theme, Material in this documentation.</li>
-<li>mkdocs commands<ul>
-<li><a href="https://www.youtube.com/watch?v=NuNj75iE8KA&amp;t=581s&amp;ab_channel=JCharisTech">helpful video</a></li>
+<li>Python - as MkDocs is a Python package<ul>
+<li>To check if python is installed on your system run <code>python --version</code> in the command line.</li>
+<li>If the output is something like <code>Python 3.10.6</code> then you have python installed, skip to pip.</li>
+<li>If the output is something like <code>Command 'python' not found,...</code> then run <code>sudo apt-get install python3</code> and follow the commands to get python installed in your system.</li>
 </ul>
 </li>
-<li>workflow of mkdocs</li>
+<li>pip - A tool for installing and managing Python packages<ul>
+<li>To check if you already have pip installed run <code>pip --version</code> in the command line.</li>
+<li>If the output is something like <code>pip 22.0.2 from /usr/lib/python3/dist-packages/pip (python 3.10)</code> then you have pip installed, skip to MkDocs installation.</li>
+<li>If the output is something like <code>Command 'pip' not found,...</code> then first run <code>sudo apt update</code> then run <code>sudo apt install python3-pip</code>, confirm for the pip installation.</li>
 </ul>
-<h3 id="material">Material</h3>
+</li>
+</ul>
+<h4 id="mkdocs-installation">MkDocs installation</h4>
 <ul>
-<li>Material for mkdocs is a custom theme used in this documentation.</li>
-<li><a href="https://squidfunk.github.io/mkdocs-material/getting-started/">To get started click here.</a></li>
+<li>To install mkdocs run <code>pip install mkdocs</code>, to confirm the installation run <code>mkdocs --version</code>.</li>
+<li>Then you require to install material(theme of mkdocs used in the project). To install material run <code>pip install mkdocs-material</code></li>
+<li>After this get the project setup locally with a virtualenv with name 'venv' in the project folder in your system.</li>
+<li>run <code>mkdocs serve</code> in the project directory to start a local development server. If you are able to see the project deployed then installation was successful.</li>
 </ul>
-<h5 id="a-video-on-material-for-mkdocs"><a href="https://www.youtube.com/watch?v=OOxL-r1L334&amp;t=966s&amp;ab_channel=SUNNYBHAVEENCHANDRA">A video on Material for mkdocs</a></h5>
+<h3 id="mkdocs-workflow">MkDocs' workflow</h3>
+<ul>
+<li>In the project folder theres a <code>docs</code> folder which contains all the markdown files which are used to build the documentation, by convention <code>docs/index.md</code> is the homepage.</li>
+<li>The <code>mkdocs.yml</code> file contains all the project settings and its configurations<ul>
+<li><code>site_name: Developer notes</code>(required setting) - main title for the project documentation</li>
+<li><pre><code>theme: <br>  name: material</code></pre>sets the theme and theme specific configuration of the documentation site.<ul>
+<li><code>name: material</code> name of known installed theme</li>
+<li><a href="https://www.mkdocs.org/user-guide/configuration/#build-directories">Learn more</a> about <code>theme</code>.</li>
+<li><a href="https://squidfunk.github.io/mkdocs-material/">Material</a> is the theme used in this documentation, it is fast, lightweight, highly configurable, easily extendable, and its open source.</li>
+</ul>
+</li>
+<li><a href="https://www.mkdocs.org/user-guide/configuration/#introduction">Learn more</a> about <code>mkdocs.yml</code>.</li>
+</ul>
+</li>
+<li><pre><code>nav: <br>  - Home: 'index.md'<br>  - basics: 'basics.md'</code></pre> this setting is used to determine the format and layout of the global navigation for the site. <a href="https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation">Learn more</a>.</li>
+</ul>
+<h3 id="how-to">How to</h3>
+<ul>
+<li>add a note<ul>
+<li>first check under which directory in <code>docs</code> you need to add the file, you can do so by checking the note's place in the site tree, which is mentioned in the <code>nav:</code> in the <code>mkdocs.yml</code> file.</li>
+<li>add and edit <code>note_name.md</code> in the proper directory and save it.</li>
+</ul>
+</li>
+<li>test/preview the note<ul>
+<li>run <code>mkdocs serve</code> it starts a local development server to see how the site will look published.</li>
+<li>after every edit just save your edits locally and the page auto-updates itself.</li>
+</ul>
+</li>
+<li>publish<ul>
+<li>once you are done making edits on the project you can publish the project on github pages, run <code>mkdocs gh-deploy</code> to do so.</li>
+<li>this will build the docs and commit them to gh-pages branch and push the gh-pages branch to GitHub and documentation should appear at <code>&lt;username&gt;.github.io/&lt;repository&gt;</code>. </li>
+</ul>
+</li>
+</ul>
+<p><a href="https://www.mkdocs.org/">Learn more</a> about mkdocs.  </p>
 
 
 
