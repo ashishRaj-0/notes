@@ -804,30 +804,16 @@
       
       
         <label class="md-nav__link" for="__nav_2_5">
-          Others
+          Docs
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Others" data-md-level="2">
+      <nav class="md-nav" aria-label="Docs" data-md-level="2">
         <label class="md-nav__title" for="__nav_2_5">
           <span class="md-nav__icon md-icon"></span>
-          Others
+          Docs
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../markdown/" class="md-nav__link">
-        Markdown
-      </a>
-    </li>
-  
-
-            
           
             
               
@@ -869,42 +855,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
-    Getting Started
-  </a>
-  
-    <nav class="md-nav" aria-label="Getting Started">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#requirements" class="md-nav__link">
     Requirements
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#mkdocs-installation" class="md-nav__link">
-    MkDocs installation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#mkdocs-workflow" class="md-nav__link">
-    MkDocs' workflow
+  <a href="#installation" class="md-nav__link">
+    Installation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to" class="md-nav__link">
-    How to
+  <a href="#workflow" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mkdocsyml" class="md-nav__link">
+    mkdocs.yml
   </a>
   
 </li>
@@ -913,6 +886,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../markdown/" class="md-nav__link">
+        Markdown
+      </a>
     </li>
   
 
@@ -1048,42 +1035,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
-    Getting Started
-  </a>
-  
-    <nav class="md-nav" aria-label="Getting Started">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#requirements" class="md-nav__link">
     Requirements
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#mkdocs-installation" class="md-nav__link">
-    MkDocs installation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#mkdocs-workflow" class="md-nav__link">
-    MkDocs' workflow
+  <a href="#installation" class="md-nav__link">
+    Installation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to" class="md-nav__link">
-    How to
+  <a href="#workflow" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mkdocsyml" class="md-nav__link">
+    mkdocs.yml
   </a>
   
 </li>
@@ -1104,68 +1078,65 @@
 
 
 <h1 id="mkdocs">MkDocs</h1>
+<p><a href="https://www.mkdocs.org/">Mkdocs</a> is a static site generator that is mainly used for documentation.</p>
+<p>mkdocs "builds" (or generates) HTML documentation from content files written in <a href="/basics/markdown.md">Markdown</a>. It comes with a built in development server to preview the documentation locally and a feature to deploy a live version to <a href="/basics/gh-pages.md">Github Pages</a>.</p>
+<p>It can be configured using a single YAML file <code>mkdocs.yml</code> present in the root directory.</p>
+<h3 id="requirements">Requirements</h3>
+<p>Python (as MkDocs is a Python package)</p>
 <ul>
-<li>MkDocs is a fast, simple and downright gorgeous static site generator that's geared towards building project documentation. </li>
-<li>Documentation source files are written in Markdown, and configured with a single YAML configuration file.</li>
-</ul>
-<h3 id="getting-started">Getting Started</h3>
-<h4 id="requirements">Requirements</h4>
-<ul>
-<li>Python - as MkDocs is a Python package<ul>
 <li>To check if python is installed on your system run <code>python --version</code> in the command line.</li>
 <li>If the output is something like <code>Python 3.10.6</code> then you have python installed, skip to pip.</li>
 <li>If the output is something like <code>Command 'python' not found,...</code> then run <code>sudo apt-get install python3</code> and follow the commands to get python installed in your system.</li>
 </ul>
-</li>
-<li>pip - A tool for installing and managing Python packages<ul>
+<p>pip (most common python package manager)</p>
+<ul>
 <li>To check if you already have pip installed run <code>pip --version</code> in the command line.</li>
 <li>If the output is something like <code>pip 22.0.2 from /usr/lib/python3/dist-packages/pip (python 3.10)</code> then you have pip installed, skip to MkDocs installation.</li>
 <li>If the output is something like <code>Command 'pip' not found,...</code> then first run <code>sudo apt update</code> then run <code>sudo apt install python3-pip</code>, confirm for the pip installation.</li>
 </ul>
-</li>
-</ul>
-<h4 id="mkdocs-installation">MkDocs installation</h4>
+<div class="admonition warning">
+<p>TODO: Installing python &amp; pip should be moved into a separate note as it may be referred by multiple sources. DRY.</p>
+</div>
+<div class="admonition warning">
+<p>TODO: Add instructions to setup a virtualenv to maintain a clean environment</p>
+</div>
+<h3 id="installation">Installation</h3>
 <ul>
 <li>To install mkdocs run <code>pip install mkdocs</code>, to confirm the installation run <code>mkdocs --version</code>.</li>
-<li>Then you require to install material(theme of mkdocs used in the project). To install material run <code>pip install mkdocs-material</code></li>
-<li>After this get the project setup locally with a virtualenv with name 'venv' in the project folder in your system.</li>
+<li>Then you require to install material (theme of mkdocs used in the project) using <code>pip install mkdocs-material</code></li>
 <li>run <code>mkdocs serve</code> in the project directory to start a local development server. If you are able to see the project deployed then installation was successful.</li>
 </ul>
-<h3 id="mkdocs-workflow">MkDocs' workflow</h3>
-<ul>
-<li>In the project folder theres a <code>docs</code> folder which contains all the markdown files which are used to build the documentation, by convention <code>docs/index.md</code> is the homepage.</li>
-<li>The <code>mkdocs.yml</code> file contains all the project settings and its configurations<ul>
-<li><code>site_name: Developer notes</code>(required setting) - main title for the project documentation</li>
-<li><pre><code>theme: <br>  name: material</code></pre>sets the theme and theme specific configuration of the documentation site.<ul>
-<li><code>name: material</code> name of known installed theme</li>
-<li><a href="https://www.mkdocs.org/user-guide/configuration/#build-directories">Learn more</a> about <code>theme</code>.</li>
-<li><a href="https://squidfunk.github.io/mkdocs-material/">Material</a> is the theme used in this documentation, it is fast, lightweight, highly configurable, easily extendable, and its open source.</li>
+<h3 id="workflow">Workflow</h3>
+<p>In the project folder there is a <code>docs</code> folder which contains all the markdown files used to build the documentation, by convention <code>docs/index.md</code> is the homepage. You can add content by editing the files or adding a new file.</p>
+<p>Below is step by step workflow for adding &amp; publishing a new note:</p>
+<ol>
+<li>Add a note:<ul>
+<li>First check under which directory in <code>docs</code> you need to add the file, you can do so by checking the note's place in the site tree, which is mentioned in the <code>nav:</code> in the <code>mkdocs.yml</code> file.</li>
+<li>Add and edit <code>note_name.md</code> in the proper directory and save it.</li>
 </ul>
 </li>
-<li><a href="https://www.mkdocs.org/user-guide/configuration/#introduction">Learn more</a> about <code>mkdocs.yml</code>.</li>
-</ul>
-</li>
-<li><pre><code>nav: <br>  - Home: 'index.md'<br>  - basics: 'basics.md'</code></pre> this setting is used to determine the format and layout of the global navigation for the site. <a href="https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation">Learn more</a>.</li>
-</ul>
-<h3 id="how-to">How to</h3>
-<ul>
-<li>add a note<ul>
-<li>first check under which directory in <code>docs</code> you need to add the file, you can do so by checking the note's place in the site tree, which is mentioned in the <code>nav:</code> in the <code>mkdocs.yml</code> file.</li>
-<li>add and edit <code>note_name.md</code> in the proper directory and save it.</li>
-</ul>
-</li>
-<li>test/preview the note<ul>
+<li>Preview the note:<ul>
 <li>run <code>mkdocs serve</code> it starts a local development server to see how the site will look published.</li>
 <li>after every edit just save your edits locally and the page auto-updates itself.</li>
 </ul>
 </li>
-<li>publish<ul>
+<li>Publish to GitHub Pages:<ul>
 <li>once you are done making edits on the project you can publish the project on github pages, run <code>mkdocs gh-deploy</code> to do so.</li>
-<li>this will build the docs and commit them to gh-pages branch and push the gh-pages branch to GitHub and documentation should appear at <code>&lt;username&gt;.github.io/&lt;repository&gt;</code>. </li>
+<li>this will build the docs and commit them to gh-pages branch and push the gh-pages branch to GitHub and documentation should appear at <code>&lt;username&gt;.github.io/&lt;repository&gt;</code>.</li>
 </ul>
 </li>
+</ol>
+<div class="admonition note">
+<p><code>mkdocs serve</code> doesn't generate the build folder. It directly serves from the markdown files. The build folder <code>site</code> can be generated by using <code>mkdocs build</code>, if necessary.</p>
+<p><code>mkdocs gh-deploy</code> builds the documentation and adds all the build output files to a separate <code>gh-pages</code> branch and commits and pushes to GitHub triggering a publish.</p>
+</div>
+<h3 id="mkdocsyml">mkdocs.yml</h3>
+<p>A quick reference for key settings:</p>
+<ul>
+<li><code>site_name</code> is displayed on the top left of the documentation site.</li>
+<li><code>theme</code> sets the theme name and theme specific configuration. Learn more.</li>
+<li><code>nav</code> defines the structure of the sidebar in the " - Title: ./file/path" format.</li>
 </ul>
-<p><a href="https://www.mkdocs.org/">Learn more</a> about mkdocs.  </p>
 
 
 
@@ -1186,7 +1157,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../markdown/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Markdown" rel="prev">
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1195,11 +1166,26 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Markdown
+              Overview
             </div>
           </div>
         </a>
       
+      
+        
+        <a href="../markdown/" class="md-footer__link md-footer__link--next" aria-label="Next: Markdown" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Markdown
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
