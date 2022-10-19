@@ -730,6 +730,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../github.md" class="md-nav__link">
+        Github
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -780,8 +794,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuring-git-to-sync-your-fork-with-the-original-repo" class="md-nav__link">
-    Configuring Git to sync your fork with the original repo
+  <a href="#keeping-your-fork-updated" class="md-nav__link">
+    Keeping your fork updated
   </a>
   
 </li>
@@ -793,24 +807,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../github.md" class="md-nav__link">
-        Github
-      </a>
     </li>
   
 
@@ -1110,8 +1117,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuring-git-to-sync-your-fork-with-the-original-repo" class="md-nav__link">
-    Configuring Git to sync your fork with the original repo
+  <a href="#keeping-your-fork-updated" class="md-nav__link">
+    Keeping your fork updated
   </a>
   
 </li>
@@ -1119,6 +1126,13 @@
         <li class="md-nav__item">
   <a href="#making-changes" class="md-nav__link">
     Making Changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
   </a>
   
 </li>
@@ -1140,8 +1154,7 @@
 
 <h1 id="workflow">Workflow</h1>
 <p>Workflow is just the recommended way of using the version control.</p>
-<p>Version Control is a system that records changes to a file or set of files over time so that you can recall specific versions later. There are a lot of types of version controlled system, to manage this project we use git, a Distributed Version Control System.<br>
-<a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">Learn More</a>.</p>
+<p>Version Control is a system that records changes to a file or set of files over time so that you can recall specific versions later. There are a lot of types of version controlled system, to manage this project we use git, a Distributed Version Control System.</p>
 <p>Git is flexible in how a user manage changes, which leads to different types of workflows. This project uses what you call is a <strong>Forking Git Workflow</strong>. </p>
 <h3 id="forking-a-repo">Forking a repo</h3>
 <p>Fork the organization repo to your github account. A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.</p>
@@ -1155,34 +1168,34 @@
 <p>Now, you have a personal remote copy of the repo. You need to bring this copy to your local machine so that you will be able to make changes. We do this by cloning the repo.</p>
 <ul>
 <li>To clone a fork, go to GitHub.com, navigate to your fork.</li>
-<li>Above the list of files, click on <strong>Code</strong> and copy the URL for the repo.</li>
+<li>Above the list of files, click on <strong>Code</strong> and then choose SSH option, copy the SSH URL for the repo.</li>
 <li>Now, open terminal and cd to where you want the cloned repo.</li>
 <li>Type <code>git clone</code>, and then paste the URL you copied earlier. It will look something like 
-  <div class="highlight"><pre><span></span><code>git clone https://github.com/YOUR_USERNAME/YOUR_FORK.git
+  <div class="highlight"><pre><span></span><code>git clone git@github.com:YOUR_USERNAME/YOUR_FORK.git
 </code></pre></div>
   Press <strong>Enter</strong>. Your local clone will be created. </li>
 <li>Run <code>git remote -v</code>. You will see current configured remote repository for your fork.
     <div class="highlight"><pre><span></span><code>$ git remote -v
-&gt; origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git <span class="o">(</span>fetch<span class="o">)</span>
-&gt; origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git <span class="o">(</span>push<span class="o">)</span>
+&gt; origin  git@github.com:YOUR_USERNAME/YOUR_FORK.git <span class="o">(</span>fetch<span class="o">)</span>
+&gt; origin  git@github.com:YOUR_USERNAME/YOUR_FORK.git <span class="o">(</span>push<span class="o">)</span>
 </code></pre></div>
  <code>origin</code> is auto-generated and points at your fork of the repo(parent repo). When you make new changes to the code base, <code>origin</code> is where you will push them. </li>
 </ul>
-<h3 id="configuring-git-to-sync-your-fork-with-the-original-repo">Configuring Git to sync your fork with the original repo</h3>
+<h3 id="keeping-your-fork-updated">Keeping your fork updated</h3>
 <p>Eventually, the original repo will have changes made to it, so you need a way to pull these updates. In order to do so, you need to add a remote that points to it. Traditionally, we call this <code>upstream</code>.</p>
 <ul>
 <li>On GitHub.com, navigate to the original repo.</li>
-<li>Above the list of files, click <strong>Code</strong> and copy the URL of the repo.</li>
+<li>Above the list of files, click on <strong>Code</strong> and then choose SSH option, copy the SSH URL for the repo.</li>
 <li>Open your clone of the fork in Terminal.</li>
 <li>Type <code>git remote add upstream</code> and then paste the URL and press <strong>Enter</strong>. It will look like
-  <div class="highlight"><pre><span></span><code>$ git remote add upstream https://github.com/ORIGINAL_OWNER/REPO-NAME.git
+  <div class="highlight"><pre><span></span><code>$ git remote add upstream git@github.com:ORIGINAL_OWNER/REPO_NAME.git
 </code></pre></div></li>
 <li>To verify run <code>git remote -v</code>. 
   <div class="highlight"><pre><span></span><code>$ git remote -v
-&gt; origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git <span class="o">(</span>fetch<span class="o">)</span>
-&gt; origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git <span class="o">(</span>push<span class="o">)</span>
-&gt; upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git <span class="o">(</span>fetch<span class="o">)</span>
-&gt; upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git <span class="o">(</span>push<span class="o">)</span>
+&gt; origin    git@github.com:YOUR_USERNAME/YOUR_FORK.git <span class="o">(</span>fetch<span class="o">)</span>
+&gt; origin    git@github.com:YOUR_USERNAME/YOUR_FORK.git <span class="o">(</span>push<span class="o">)</span>
+&gt; upstream  git@github.com:ORIGINAL_OWNER/REPO_NAME.git <span class="o">(</span>fetch<span class="o">)</span>
+&gt; upstream  git@github.com:ORIGINAL_OWNER/REPO_NAME.git <span class="o">(</span>push<span class="o">)</span>
 </code></pre></div></li>
 </ul>
 <h3 id="making-changes">Making Changes</h3>
@@ -1206,7 +1219,9 @@ It is important that you never commit to main because main will be the branch th
 git commit 
 </code></pre></div>
    This will open an editor where you can write your commit message.</li>
-<li><strong>Push up your changes</strong> - Push your changes to your fork. Do this by running <code>git push origin feature-branch</code>.</li>
+<li><strong>Push up your changes</strong> - Push your changes to your fork. Do this, by running 
+  <div class="highlight"><pre><span></span><code>git push origin feature-branch
+</code></pre></div></li>
 <li><strong>Make a pull request</strong> - Once you see your branch appear in GitHub, be sure to compare your branch with the original repo's main branch. This is where you can check for any merge conflicts that need to be resolved. After resolving, if it all looks good, make your pull request of the branch you want. Give your pull request a proper title and description(optional).</li>
 <li><strong>Pushing additional changes</strong> - Once you have created a pull request, it will likely be reviewed and some additional fixes will be necessary. <strong>Do not create a pull request</strong>. Rather, simply make more commits to your branch and push them. They will be added to the pull request automatically.</li>
 </ol>
@@ -1220,7 +1235,13 @@ git commit
 <li>It is good idea to make a comment on the pull request whenever you commit more changes so people get notified that it is ready to be reviewed again, as many people have notifications off for commits on pull requests.</li>
 </ul>
 </div>
-<p><a href="https://docs.github.com/en/get-started/quickstart/github-flow#following-github-flow">Github flow</a>.</p>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">More on Version Control</a>.</li>
+<li><a href="https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows">Some Distributed Git Workflows</a>.</li>
+<li><a href="https://docs.github.com/en/get-started/quickstart/github-flow">Workflow recommended by GitHub</a>.</li>
+<li><a href="https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project">Contributing to a project in Distributed Git</a>.</li>
+</ul>
 
 
 
